@@ -1,0 +1,257 @@
+*, *:before, *:after { box-sizing: border-box; }
+
+body { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-style: normal; font-weight: normal; line-height: 24px; margin: 0; }
+a { color: #222; outline: 0; text-decoration: none; transition: color 110ms ease-in-out; }
+header { display: block; }
+img { display: inline-block; color: transparent; font-size: 0; height: auto; max-width: 100%; vertical-align: middle; image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: auto; image-rendering: auto; -ms-interpolation-mode: bicubic; }
+ul, ol { list-style: none; margin: 0 0 1.5em; padding: 0; }
+
+#main { position: relative; z-index: 2; }
+
+.main-header {
+  position: relative;
+  padding: 35px 0 0 0;
+  height: 75px;
+}
+
+.main-header .main-logo {
+  background: url('images/logo.png');
+  height: 60px;
+  position: absolute;
+  z-index: 5;
+  width: 180px;
+  background-size: cover;
+  top: 15px;
+  left: 10px;
+}
+
+.main-header .logger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e4c315;
+  z-index: 5;
+  padding: 0 10px;
+}
+
+.main-header .logger a {
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+
+.main-header .logger .bezier {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: -24px;
+}
+
+.main-header .logger .bezier.bezier-first {
+  background: #e4c315;
+}
+
+.main-header .logger .bezier.bezier-second {
+  background: #fff;
+  border-top-right-radius: 12px;
+}
+
+.main-header .logger .bezier.bezier-third {
+  background: #e4c315;
+  left: -12px;
+}
+
+.main-header .logger .bezier.bezier-fourth {
+  left: -12px;
+  top: 12px;
+  background: #e4c315;
+  border-bottom-left-radius: 12px;
+}
+
+.main-header > .nav {
+  background: #ffffff;
+  height: 40px;
+  z-index: 4;
+  margin-left: 205px;
+  position: absolute;
+}
+
+.main-header > .nav li {
+  text-transform: uppercase;
+  color: #5688a8;
+  padding: 0;
+  transition: padding 0.5s ease;
+}
+
+.main-header > .nav li a {
+  color: #5688a8;
+}
+
+.main-header > .nav li span {
+  cursor: pointer;
+}
+
+.main-header > .nav li a.active,
+.main-header > .nav li span.active {
+  color: #ffffff;
+  background-color: #5688a8;
+  padding-bottom: 35px;
+}
+
+.main-header .diagonale {
+  height: 25px;
+  width: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 74px;
+}
+
+.main-header .diagonale .separateur {
+  width: 0;
+  height: 0;
+  border-bottom: 25px solid transparent;
+  border-top: 0 solid transparent;
+  border-left: 0 solid #ffffff;
+  z-index: 1;
+}
+
+.main-header .submenu {
+  transition: height 0.5s ease;
+  height: 0;
+  position: absolute;
+  width: 100%;
+  top: 75px;
+  z-index: 2;
+  background: url(images/bg-submenu.png) bottom right no-repeat #5688a8;
+}
+
+.main-header .submenu.active {
+  height: 235px;
+  padding-top: 30px;
+}
+
+.main-header .submenu > ul {
+  display: none;
+}
+
+.main-header .submenu .vertical {
+  margin-left: 0;
+}
+
+.main-header .submenu > .vertical {
+  margin-left: 150px;
+}
+
+.main-header .submenu .horizontal > li {
+  padding: 0 10px;
+}
+
+.main-header .submenu .horizontal li {
+  display: inline-block;
+}
+
+.main-header .submenu .horizontal .vertical a {
+  display: block;
+  padding: 0 10px 0 5px;
+}
+
+.main-header .submenu li {
+  color: #ffffff;
+}
+
+.main-header .submenu li a {
+  color: #ffffff;
+  padding: 5px 10px 5px 5px;
+  display: inline-block;
+}
+
+.main-header .submenu li a:hover {
+  background: #30506d;
+}
+
+.main-header .submenu li h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 2px;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+.bg-home {
+  background: url('images/bg-field.png') center top no-repeat;
+  background-size: cover;
+  height: calc(100% - 275px);
+}
+
+.main-footer {
+  background: url('images/bg-footer.png') right no-repeat #0a1832;
+  height: 390px;
+  overflow: hidden;
+}
+
+.main-footer .submenu {
+  margin-bottom: 40px;
+  padding-top: 35px;
+}
+
+.main-footer .submenu .horizontal > li {
+  margin: 0 30px 0 0;
+}
+
+.main-footer .submenu .vertical {
+  margin-left: 0;
+}
+
+.main-footer .submenu .vertical .rs-icons a {
+  display: inline-block;
+  font-size: 22px;
+}
+
+.main-footer .submenu h3 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.main-footer .submenu a {
+  color: #ffffff;
+  font-size: 12px;
+  height: 18px;
+  padding: 0 2px 2px;
+  line-height: 18px;
+}
+
+.main-footer .submenu a:hover {
+  background: #5688a8;
+}
+
+.main-footer .submenu span {
+  color: #ffffff;
+  font-size: 12px;
+  height: 18px;
+  padding: 0 2px 2px;
+  line-height: 18px;
+}
+
+.main-footer .partenaires {
+  margin: 0 auto 20px;
+  width: 535px;
+}
+
+.main-footer .partenaires span {
+  margin: 0 15px 15px 0;
+}
+
+.main-footer .partenaires .row span:last-child {
+  margin-right: 0;
+}
+
+.main-footer .copyright {
+  color: #5688a8;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+}

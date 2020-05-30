@@ -1,0 +1,232 @@
+@darkNavy  : #0a1832;
+@Navy      : #30506d;
+@lightNavy : #5688a8;
+@mustard   : #e4c315;
+@white     : #ffffff;
+
+.main-header {
+  height: 75px;
+  padding: 35px 0 0 0;
+  position: relative;
+  .main-logo {
+    background: url('./images/logo.png');
+    background-size: cover;
+    height: 60px;
+    left: 10px;
+    position: absolute;
+    top: 15px;
+    width: 180px;
+    z-index: 5;
+  }
+
+  .logger {
+    background-color: @mustard;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    a {
+     margin: 0 5px;
+     text-transform: uppercase;
+    }
+    .bezier {
+      height: 12px;
+      left: -24px;
+      position: absolute;
+      width: 12px;
+      &.bezier-first {
+        background: #e4c315;
+      }
+      &.bezier-second {
+        background: #fff;
+        border-top-right-radius: 12px;
+      }
+      &.bezier-third {
+        background: #e4c315;
+        left: -12px;
+      }
+      &.bezier-fourth {
+        background: #e4c315;
+        border-bottom-left-radius: 12px;
+        left: -12px;
+        top: 12px;
+      }
+    }
+  }
+
+  >.nav {
+    background: @white;
+    height: 40px;
+    margin-left: 205px;
+    position: absolute;
+    z-index: 4;
+    li {
+      color: @lightNavy;
+      padding: 0;
+      text-transform: uppercase;
+      transition: padding 0.5s ease;
+      a {
+        color: @lightNavy;
+        &.active   {
+          background-color: @lightNavy;
+          color: @white;
+          padding-bottom: 35px;
+        }
+      }
+      span {
+        cursor: pointer;
+        &.active   {
+          background-color: @lightNavy;
+          color: @white;
+          padding-bottom: 35px;
+        }
+      }
+    }
+  }
+
+  .diagonale {
+    height: 25px;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    z-index: 3;
+    .separateur {
+      border-bottom: 25px solid transparent;
+      border-left: 0 solid @white;
+      border-top: 0 solid transparent;
+      height: 0;
+      width: 0;
+      z-index: 1;
+    }
+  }
+
+  .submenu {
+    background: url(./images/bg-submenu.png) bottom right no-repeat @lightNavy;
+    height: 0;
+    position: absolute;
+    top: 75px;
+    transition: height 0.5s ease;
+    width: 100%;
+    z-index: 2;
+    &.active {
+      height: 235px;
+      padding-top: 30px;
+    }
+    >ul {
+      display: none;
+    }
+    .vertical {
+      margin-left: 0;
+    }
+    >.vertical {
+      margin-left: 150px;
+    }
+    .horizontal {
+      >li {
+        padding: 0 10px;
+      }
+      li {
+        display: inline-block;
+      }
+      .vertical {
+        a {
+          display: block;
+          padding: 0 10px 0 5px;
+        }
+      }
+    }
+    li {
+      color: @white;
+      a {
+        color: @white;
+        display: inline-block;
+        padding: 5px 10px 5px 5px;
+        &:hover {
+          background: @Navy;
+        }
+      }
+      h3 {
+        color: @white;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        padding-left: 5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.bg-home {
+  background:url('./images/bg-field.png') right bottom no-repeat;
+  background-size: cover;
+  height: calc(~"100% - 275px");
+}
+
+.main-footer {
+  background: url('./images/bg-footer.png') right no-repeat @darkNavy;
+  height: 390px;
+  overflow: hidden;
+  .submenu {
+    margin-bottom: 40px;
+    padding-top: 35px;
+    .horizontal {
+      > li {
+        margin: 0 30px 0 0;
+      }
+    }
+    .vertical {
+      margin-left: 0;
+      .rs-icons {
+        a {
+          display: inline-block;
+          font-size: 22px;
+        }
+      }
+    }
+    h3 {
+      color: @white;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+    a {
+      color: @white;
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      padding: 0 2px 2px;
+      &:hover {
+        background: @lightNavy;
+      }
+    }
+    span {
+      color: @white;
+      font-size: 12px;
+      height: 18px;
+      line-height: 18px;
+      padding: 0 2px 2px;
+    }
+  }
+
+  .partenaires {
+    margin: 0 auto 20px;
+    width: 535px;
+    span {
+      margin: 0 15px 15px 0;
+    }
+    .row span:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .copyright {
+    color: #5688a8;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+  }
+}
