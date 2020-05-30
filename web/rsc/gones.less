@@ -2,6 +2,7 @@
 @Navy      : #30506d;
 @lightNavy : #5688a8;
 @mustard   : #e4c315;
+@red       : #eb5757;
 @white     : #ffffff;
 
 .main-header {
@@ -164,6 +165,86 @@
   background-size: cover;
   height: calc(~"100% - 275px");
 }
+
+.bg-middle {
+  background:url('./images/bg-field.png') right bottom no-repeat;
+  background-size: cover;
+  height: inherit;
+  min-height: calc(~"100% - 275px");
+  padding: 25px;
+  h2 {
+    color: @white;
+    margin-right: 50px;
+    text-align: right;
+  }
+  >p {
+    color: @red;
+    margin-left: 45%;
+    text-align: right;
+    text-transform: uppercase;
+    width: 50%;
+  }
+}
+
+/* A ne pas conserver si on reste sur un card-deck */
+/* Mais si on passe sur un card-column, on veut 4 colonnes */
+section {
+  &.card-columns {
+    column-count: 4;
+  }
+}
+
+.news {
+  border: 0 none;
+  border-radius: 0;
+  &.card {
+    margin-bottom: 15px !important;
+    min-width: 19%;
+  }
+  .tags {
+    background: white;
+    border: 0 none;
+    color: #5688a8;
+    font-style: italic;
+    padding-bottom: 0;
+    text-align: right;
+  }
+  .card-body {
+    padding-bottom: 2rem;
+    padding-top: .5rem;
+    .card-title {
+      text-align: justify;
+      a {
+        color: #0a1832;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 16px;
+        text-decoration: none;
+      }
+    }
+    .card-text {
+      line-height: 14px;
+      text-align: justify;
+      font-size: 12px;
+    }
+  }
+  .card-footer {
+    padding: 0;
+    .readmore {
+      background: #5688a8;
+      display: block;
+      font-weight: bold;
+      padding: 12px 20px;
+      text-align: right;
+      text-transform: uppercase;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
 
 .main-footer {
   background: url('./images/bg-footer.png') right no-repeat @darkNavy;

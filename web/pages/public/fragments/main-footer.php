@@ -1,32 +1,7 @@
 <footer class="main-footer">
   <section class="submenu">
     <ul class="nav justify-content-center horizontal" id="nav-footer">
-      <li class="nav-item">
-        <h3>Le Club</h3>
-        <ul class="nav flex-column vertical">
-          <li class="nav-item"><a class="nav-link" href="#">L'histoire</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Le stade</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Inscriptions</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contactez-nous</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <h3>Disciplines</h3>
-        <ul class="nav flex-column vertical">
-          <li class="nav-item"><a class="nav-link" href="#">Foot US</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Flag</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Cheerleading</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <h3>Infos Pratiques</h3>
-        <ul class="nav flex-column vertical">
-          <li class="nav-item"><a class="nav-link" href="#">Boutique</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Bons plans</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Mentions légales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Plan du site</a></li>
-        </ul>
-      </li>
+      %1$s
       <li class="nav-item">
         <h3>Réseaux Sociaux</h3>
         <ul class="nav flex-column vertical">

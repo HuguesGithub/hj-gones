@@ -40,13 +40,14 @@ class WpPost extends GlobalDomain {
   }
 
   public function getID() { return $this->ID; }
-  public function getMenuOrder() { return $this->menu_order; }
   public function getPostDate() { return $this->post_date; }
   public function getPostContent() { return $this->post_content; }
   public function getPostTitle() { return $this->post_title; }
+  public function getPostExcerpt() { return $this->post_excerpt; }
   public function getPostStatus() { return $this->post_status; }
   public function getPostName() { return $this->post_name; }
   public function getGuid() { return $this->guid; }
+  public function getMenuOrder() { return $this->menu_order; }
 
   public function getPostMeta($key='') {
     if ( !isset($this->metas) ) { $this->metas = get_post_meta($this->ID); }
@@ -58,6 +59,22 @@ class WpPost extends GlobalDomain {
   }
   public function getPermalink()
   { return get_permalink($this->getID()); }
+
+  public function getBean()
+  { return new WpPostBean($this); }
+
+  public function getTags()
+  {
+    if (empty($this->WpTags)) {
+      $this->WpTags = array();
+      $tags = wp_get_post_tags($this->ID);
+      while (!empty($tags)) {
+        $tag = array_shift($tags);
+        array_push($this->WpTags, WpTag::convertElement($tag));
+      }
+    }
+    return $this->WpTags;
+  }
 
 
   /*
@@ -113,18 +130,6 @@ class WpPost extends GlobalDomain {
       }
     }
     return $this->WpCategories;
-  }
-  public function getTags()
-  {
-    if (empty($this->WpTags)) {
-      $this->WpTags = array();
-      $tags = wp_get_post_tags($this->ID);
-      while (!empty($tags)) {
-        $tag = array_shift($tags);
-        array_push($this->WpTags, WpTag::convertElement($tag));
-      }
-    }
-    return $this->WpTags;
   }
   public function hasTag($tag)
   {

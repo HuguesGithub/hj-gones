@@ -31,6 +31,7 @@ interface ConstantsInterface
   const WP_ORDERBY             = 'orderby';
   const WP_PAGE                = 'page';
   const WP_POST                = 'post';
+  const WP_POSTDATE            = 'post_date';
   const WP_POSTSPERPAGE        = 'posts_per_page';
   const WP_POSTSTATUS          = 'post_status';
   const WP_POSTTAG             = 'post_tag';

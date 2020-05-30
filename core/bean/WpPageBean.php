@@ -47,9 +47,27 @@ class WpPageBean extends LocalBean
         }
         $categs = get_categories(array('slug'=>$lastSlug, 'hide_empty'=>false));
       } else {
-        // On est dans le cas d'une page
-        $returned = new GonePageBean($uri);
+        $page = get_post();
+        if ($page instanceof WP_Post) {
+          // On est dans le cas d'une page
+          if ($page->post_type=='page') {
+            $returned = self::getSpecificPageBean($page);
+          }
+        }
       }
+    }
+    return $returned;
+  }
+
+  private static function getSpecificPageBean($page)
+  {
+    switch ($page->post_name) {
+      case 'actualites' :
+        $returned = new GonePageActualitesBean($page);
+      break;
+      default :
+        //$returned = new GonePageBean();
+      break;
     }
     return $returned;
   }
@@ -77,6 +95,10 @@ class WpPageBean extends LocalBean
     while (!empty($WpPages)) {
       $this->WpPage = array_shift($WpPages);
       if ($this->WpPage->getMenuOrder()==99) {
+        continue;
+      }
+      $postMeta = $this->WpPage->getPostMeta('toheader');
+      if ($postMeta==0) {
         continue;
       }
       $this->Children = $this->WpPage->getChildren();
@@ -135,7 +157,34 @@ class WpPageBean extends LocalBean
    */
   public function getPublicFooter()
   {
-    $args = array();
+    $strNavigation = '';
+    //////////////////////////////////////////////////////////////
+    // On va récupérer les WpPages "racines".
+    $WpPages = $this->WpPostServices->getPagesHeader();
+    while (!empty($WpPages)) {
+      $WpPage = array_shift($WpPages);
+      $postMeta = $WpPage->getPostMeta('tofooter');
+      $Children = $WpPage->getChildren();
+      if ($postMeta==1) {
+        $strNavigation .= '<li class="nav-item"><h3>'.$WpPage->getPostTitle().'</h3>';
+        $strNavigation .= '<ul class="nav flex-column vertical">';
+        while (!empty($Children)) {
+          $Child = array_shift($Children);
+          $postMeta = $Child->getPostMeta('tofooter');
+          if ($postMeta==1) {
+            $strNavigation .= '<li class="nav-item"><a class="nav-link" href="#">'.$Child->getPostTitle().'</a></li>';
+          }
+        }
+        $strNavigation .= '</ul>';
+        $strNavigation .= '</li>';
+      }
+    }
+
+
+    $args = array(
+      // La navigation - 1
+      $strNavigation,
+    );
     $urlTemplate = 'web/pages/public/fragments/main-footer.php';
     return $this->getRender($urlTemplate, $args);
   }
