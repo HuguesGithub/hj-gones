@@ -2,7 +2,7 @@
 /**
  * @author Hugues
  * @since 1.00.00
- * @version 1.00.01
+ * @version 1.00.00
  */
 interface ConstantsInterface
 {
